@@ -1,5 +1,7 @@
 # HistoMatch
-HistoMatch: programa que automatiza la evaluación de compatibilidad HLA en los cinco loci clásicos clasificando cada uno en cinco categorías y generando un puntaje global (1–10). Tiene 6 posibilidades de diagnostico de cada loci.
+HistoMatch: programa que automatiza la evaluación de compatibilidad HLA en los cinco loci clásicos clasificando cada uno en cinco categorías y generando un puntaje global (1–10). Tiene 4 archivos: main.py, hla_finder.py (analiza un pdf/word y exporta los HLA a un .csv) histomatch_analisis.py (analiza el .csv y eporta los resultados de compatibilidad a un .docx llamado "Analisis_HLA") y histomatch_reporte.py (analiza el .docx y resume la informacion para dejar lo importante en otro .docx llamado "Reporte_HLA"). 
+
+HistoMatch tiene 6 posibilidades de diagnostico de cada loci:
 
 Idéntico
 Se define cuando hay una coincidencia total y absoluta entre los alelos comparados. Condición: La cantidad de diferencias es cero (len(dif) == 0) y existe al menos un alelo coincidente (len(inter) > 0). Significado: Los perfiles son exactamente iguales en ese locus.
