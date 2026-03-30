@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HistoMatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-content">
+        <div class="header-text">
+            <h1>HistoMatch</h1>
+            <p>Desarrollado por Rodrigo Puertas y Valery Velasques</p>
+        </div>
+    </div>
+</header>
+
+<!-- DESCRIPTION -->
+<section id="description">
+    <h2>Acerca de HistoMatch</h2>
+    <p>
+        HistoMatch es una aplicación de escritorio basada en Python diseñada para automatizar 
+        el análisis de compatibilidad HLA. Proporciona una interfaz gráfica intuitiva 
+        construida con Tkinter, permitiendo a los usuarios automatizar  
+        el análisis de histocompatibilidad y la generación de reportes.
+    </p>
+
+    <p>
+        Automatiza la evaluación de compatibilidad HLA en cinco loci clásicos, 
+        clasificando cada uno en cinco categorías y generando un puntaje global (1–10).
+    </p>
+
+    <h2>Estructura del Proyecto</h2>
+    <ul>
+        <li><code>main.py</code></li>
+        <li><code>hla_finder.py</code> – extrae datos HLA de archivos PDF/Word y los exporta a CSV</li>
+        <li><code>histomatch_analisis.py</code> – analiza el CSV y exporta los resultados de compatibilidad a un archivo DOCX ("Analisis_HLA")</li>
+        <li><code>histomatch_reporte.py</code> – resume la información clave de "Analisis_HLA" en un reporte DOCX ("Reporte_HLA")</li>
+    </ul>
+</section>
+
+<!-- DOWNLOAD -->
+<section id="download">
+    <h2>Descarga</h2>
+    <p>Los scripts están en este repositorio (también se incluyen archivos HLA de ejemplo):</p>
+    <a href="https://github.com/BigMindLab/HistoMatch" class="download-button">
+        Descargar HistoMatch
+    </a>
+</section>
+
+<!-- INSTALLATION -->
+<section id="installation">
+    <h2>Instalación</h2>
+    <ol>
+        <li>Descarga los cuatro scripts del repositorio (<code>main_app.py</code>,
+             <code>hla_finder.py</code>, <code>histomatch_analisis.py</code>, <code>histomatch_reporte.py</code>).
+              También se incluyen dos archivos HLA de ejemplo.</li>
+        <li>Instala los paquetes requeridos:</li>
+        <pre><code>pip install pdfplumber pandas python-docx pywin32</code></pre>
+        <li>Ejecuta la aplicación desde tu terminal:</li>
+        <pre><code>python main.py</code></pre>
+    </ol>
+</section>
+
+<!-- TUTORIAL -->
+<section id="tutorial">
+    <h2>Tutorial de HistoMatch</h2>
+    <ol>
+        <li>
+            Ejecuta la aplicación en tu terminal:
+            <pre><code>python main_app.py</code></pre>
+            <div class="tutorial-images">
+                <img src="images/01_interface.png" alt="Interfaz inicial">
+            </div>
+        </li>
+        <li>
+            Carga los resultados HLA del paciente y del donante.
+            <div class="tutorial-images">
+                <img src="images/02_load_data.png" alt="Cargar datos">
+            </div>
+        </li>
+        <li>
+            Haz clic en "Iniciar Procesamiento".
+            <div class="tutorial-images">
+                <img src="images/03_start_process.png" alt="Iniciar proceso">
+            </div>
+        </li>
+        <li>
+            Los resultados se generarán y descargarán automáticamente.
+            <div class="tutorial-images">
+                <img src="images/04_results.png" alt="Resultados">
+            </div>
+        </li>
+    </ol>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Rodrigo Puertas y Valery Velasques. Proyecto de código abierto.</p>
+</footer>
+
+</body>
+</html>
