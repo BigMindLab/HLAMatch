@@ -11,6 +11,7 @@ Contains 4 files:
 HLAmatch has 6 diagnostic possibilities for each locus:
 
 1. Identical
+
 Definition: Defined when there is a complete and absolute match between the compared alleles.
 Condition: The number of differences is zero (len(dif) == 0) and at least one matching allele exists (len(inter) > 0).
 Meaning: The profiles are exactly the same at that locus.
