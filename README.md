@@ -1,7 +1,7 @@
 # HLAmatch
 HLAmatch: A program that automates HLA compatibility evaluation across the five classic loci, classifying each into categories and generating an overall score (1–10). 
 
-Contiene 4 archivos: 
+Contains 4 files: 
 1. main.py
 2. hla_finder.py (analyzes a PDF/Word document and exports the HLA data to a .csv file)
 3. histomatch_analisis.py (analyzes the .csv file and exports the compatibility results to a .docx file named "Analisis_HLA")
