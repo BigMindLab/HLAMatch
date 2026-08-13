@@ -10,7 +10,7 @@ Contains 4 files:
 
 HLAmatch has 6 diagnostic possibilities for each locus:
 
-1. Identical/
+1. Identical//
 
 Definition: Defined when there is a complete and absolute match between the compared alleles.
 /
