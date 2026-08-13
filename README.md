@@ -1,29 +1,41 @@
-# HLAMatch
-HLAMatch: programa que automatiza la evaluación de compatibilidad HLA en los cinco loci clásicos clasificando cada uno en cinco categorías y generando un puntaje global (1–10). 
+# HLAmatch
+HLAmatch: A program that automates HLA compatibility evaluation across the five classic loci, classifying each into categories and generating an overall score (1–10). 
 
 Contiene 4 archivos: 
 1. main.py
-2. hla_finder.py (analiza un pdf/word y exporta los HLA a un .csv)
-3. histomatch_analisis.py (analiza el .csv y eporta los resultados de compatibilidad a un .docx llamado "Analisis_HLA")
-4. histomatch_reporte.py (analiza el .docx y resume la informacion para dejar lo importante en otro .docx llamado "Reporte_HLA"). 
+2. hla_finder.py (analyzes a PDF/Word document and exports the HLA data to a .csv file)
+3. histomatch_analisis.py (analyzes the .csv file and exports the compatibility results to a .docx file named "Analisis_HLA")
+4. histomatch_reporte.py (analyzes the .docx file and summarizes key information into another .docx file named "Reporte_HLA")
 
 
-HLAMatch tiene 6 posibilidades de diagnostico de cada loci:
+HLAmatch has 6 diagnostic possibilities for each locus:
 
-1. Idéntico
-Se define cuando hay una coincidencia total y absoluta entre los alelos comparados. Condición: La cantidad de diferencias es cero (len(dif) == 0) y existe al menos un alelo coincidente (len(inter) > 0). Significado: Los perfiles son exactamente iguales en ese locus.
+1. Identical
+Definition: Defined when there is a complete and absolute match between the compared alleles.
+Condition: The number of differences is zero (len(dif) == 0) and at least one matching allele exists (len(inter) > 0).
+Meaning: The profiles are exactly the same at that locus.
 
-2. Incluido
-Es un estado especial de alta resolución donde un conjunto de alelos es un subconjunto casi total del otro. Condición: Se activa cuando la coincidencia es baja (menos del 40%), pero uno de los conjuntos de alelos está contenido en el otro en un 90% o más (cobertura >= 0.9). Significado: Aunque no son idénticos, la información de uno está prácticamente contenida en el otro.
+2. Included
+Definition: A special high-resolution state where one set of alleles is an almost complete subset of the other.
+Condition: Activated when the overall match rate is low (less than 40%), but one of the allele sets is contained within the other by 90% or more (coverage >= 0.9).
+Meaning: Although not identical, the information in one set is virtually contained in the other.
 
-3. Compatible 
-Es el estado por defecto cuando no hay conflictos graves pero no se llega a la identidad total. Condición: Se alcanza si no se cumplen las reglas de "Idéntico", "Incierto" o "No compatible". También se asigna si faltan detalles de alta resolución pero los grupos base coinciden. Significado: Existe una compatibilidad aceptable bajo los parámetros del script.
+3. Compatible
+Definition: The default state when there are no severe conflicts, but full identity is not reached.
+Condition: Assigned if the rules for "Identical", "Uncertain", or "Non-compatible" are not met. It is also assigned if high-resolution details are missing but the base groups match.
+Meaning: Acceptable compatibility exists under the script's parameters.
 
-4. Incierto
-Se utiliza cuando los datos son ambiguos o la coincidencia es muy baja pero no nula. Condición: Se define si la coincidencia es menor al 40% (porc_iguales < 0.4) pero hay al menos un alelo igual (len(inter) >= 1), y no llega a calificar como "Incluido". Significado: Los datos sugieren una posible compatibilidad, pero los detalles no son suficientes para confirmarla.
+4. Uncertain
+Definition: Used when the data is ambiguous or the match rate is very low, but not zero.
+Condition: Defined if the match rate is under 40% (porc_iguales < 0.4) with at least one matching allele (len(inter) >= 1), provided it does not qualify as "Included".
+Meaning: Data suggests potential compatibility, but details are insufficient for confirmation.
 
-5. No compatible
-Se define cuando existe una discrepancia clara en la estructura genética. Condición: Si los Grupos Base (la parte antes de los dos puntos :) son diferentes. Si la coincidencia es menor al 40% y no hay ni un solo alelo en común. Significado: Existe un rechazo o falta de concordancia genética en ese locus.
+5. Non-compatible
+Definition: Defined when there is a clear discrepancy in the genetic structure.
+Condition: Triggered if the Base Groups (the region before the colon :) are different, or if the match rate is under 40% with no shared alleles.
+Meaning: Genetic rejection or lack of concordance exists at that locus.
 
-6. Sin Datos / No detectado
-Estados de error o falta de información. Condición: Se activa si alguno de los campos de grupo está vacío o si la función de mapeo no encuentra las columnas DQA/DQB. Significado: No se pudo realizar el análisis por falta de parámetros de entrada.
+6. No Data / Not Detected
+Definition: States representing errors or missing information.
+Condition: Activated if any group field is empty or if the mapping function cannot locate the DQA/DQB columns.
+Meaning: Analysis could not be performed due to missing input parameters.
