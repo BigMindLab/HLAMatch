@@ -20,7 +20,7 @@ Meaning: The profiles are exactly the same at that locus.
    
 Definition: A special high-resolution state where one set of alleles is an almost complete subset of the other.
 Condition: Activated when the overall match rate is low (less than 40%), but one of the allele sets is contained within the other by 90% or more (coverage >= 0.9).
-Meaning: Although not identical, the information in one set is virtually contained in the other.
+Meaning: Although not identical, the information in one set is contained in the other.
 
 3. Compatible
    
@@ -32,12 +32,12 @@ Meaning: Acceptable compatibility exists under the script's parameters.
    
 Definition: Used when the data is ambiguous or the match rate is very low, but not zero.
 Condition: Defined if the match rate is under 40% (porc_iguales < 0.4) with at least one matching allele (len(inter) >= 1), provided it does not qualify as "Included".
-Meaning: Data suggests potential compatibility, but details are insufficient for confirmation.
+Meaning: Data suggests potential non-compatibility, but a profesional should review the case.
 
 5. Non-compatible
    
 Definition: Defined when there is a clear discrepancy in the genetic structure.
-Condition: Triggered if the Base Groups (the region before the colon :) are different, or if the match rate is under 40% with no shared alleles.
+Condition: Triggered if the Base Groups (the region before the colon ":") are different, or if the match rate is under 40% with no shared alleles.
 Meaning: Genetic rejection or lack of concordance exists at that locus.
 
 6. No Data / Not Detected
