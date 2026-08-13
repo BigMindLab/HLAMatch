@@ -13,14 +13,12 @@ HLAmatch has 6 diagnostic possibilities for each locus:
 1. Identical
 
 Definition: Defined when there is a complete and absolute match between the compared alleles.
-/
 Condition: The number of differences is zero (len(dif) == 0) and at least one matching allele exists (len(inter) > 0).
-/
 Meaning: The profiles are exactly the same at that locus.
 
-2. Included/
-Definition: A special high-resolution state where one set of alleles is an almost complete subset of the other./
-Condition: Activated when the overall match rate is low (less than 40%), but one of the allele sets is contained within the other by 90% or more (coverage >= 0.9)./
+2. Included
+Definition: A special high-resolution state where one set of alleles is an almost complete subset of the other.
+Condition: Activated when the overall match rate is low (less than 40%), but one of the allele sets is contained within the other by 90% or more (coverage >= 0.9).
 Meaning: Although not identical, the information in one set is virtually contained in the other.
 
 3. Compatible
